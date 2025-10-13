@@ -1,6 +1,3 @@
-#set page(
-	margin: (x: 0.738in, y: 0.699in),
-)
 #set text(
 	11pt
 )
