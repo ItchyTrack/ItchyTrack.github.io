@@ -48,5 +48,6 @@
 }
 
 .project-link:hover {
+	color: #dedede;
 	opacity: 0.8;
 }

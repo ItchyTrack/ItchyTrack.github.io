@@ -11,7 +11,7 @@
 	position: relative;
 	background: var(--bg-image) center/cover no-repeat;
 	border-radius: 8px;
-	box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+	box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
 	/* transition: transform 0.25s ease, box-shadow 0.25s ease; */
 	min-height: 220px;
 	display: flex;
@@ -51,12 +51,12 @@
 
 .game-img-container {
 	display: flex;
-	justify-content:center;
+	justify-content: center;
 	align-items: center;
 	clip-path: view-box;
 }
 
-.game-img-container > img {
+.game-img-container>img {
 	width: 100%;
 }
 
@@ -68,11 +68,129 @@
 }
 
 .game-links a {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
+	display: flex;
+	align-items: center;
+	text-decoration: none;
 }
 
 .game-link:hover {
 	filter: brightness(60%)
+}
+
+/* === Slideshow Styles === */
+
+.slideshow {
+	position: relative;
+	overflow: hidden;
+	border-radius: 8px;
+	width: 100%;
+	min-height: 200px;
+}
+
+.slideshow img.slide {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: scale-down;
+	opacity: 0;
+	z-index: 1;
+}
+
+.slideshow img.active {
+	opacity: 1;
+	z-index: 2;
+}
+
+.slideshow-controls {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	transform: translateY(-50%);
+	display: flex;
+	justify-content: space-between;
+	padding: 0 0.5rem;
+	z-index: 10;
+	pointer-events: none;
+}
+
+.slideshow-controls button {
+	pointer-events: all;
+	background: rgba(0, 0, 0, 0.45);
+	color: #fff;
+	border: none;
+	font-size: 1.25rem;
+	padding: 0.25rem 0.5rem;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background 0.2s;
+}
+
+.slideshow-controls button:hover {
+	background: rgba(0, 0, 0, 0.7);
+}
+
+/* === Slide Animations === */
+
+@keyframes slide-enter-next {
+	from {
+		transform: translateX(100%);
+		opacity: 0;
+	}
+	to {
+		transform: translateX(0%);
+		opacity: 1;
+	}
+}
+
+@keyframes slide-exit-next {
+	from {
+		transform: translateX(0%);
+		opacity: 1;
+	}
+	to {
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+}
+
+@keyframes slide-enter-prev {
+	from {
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+	to {
+		transform: translateX(0%);
+		opacity: 1;
+	}
+}
+
+@keyframes slide-exit-prev {
+	from {
+		transform: translateX(0%);
+		opacity: 1;
+	}
+	to {
+		transform: translateX(100%);
+		opacity: 0;
+	}
+}
+
+/* Animation Classes */
+.slide-enter-next {
+	animation: slide-enter-next 0.5s forwards;
+}
+
+.slide-exit-next {
+	animation: slide-exit-next 0.5s forwards;
+}
+
+.slide-enter-prev {
+	animation: slide-enter-prev 0.5s forwards;
+}
+
+.slide-exit-prev {
+	animation: slide-exit-prev 0.5s forwards;
 }

@@ -1,134 +1,135 @@
+/* === Color Scheme Variables === */
+:root {
+    --color-background: #372c2e;
+	--color-header-bg: var(--color-background);
+    --color-text: #ffffff;
+    --color-link: #1e7bd8;
+    --color-link-hover: #0056b2;
+    --color-secondary-text: #c7b2b2;
+    --color-border: #898989;
+}
+
+/* hide page scrollbar */
+html { scrollbar-width: none; } /* Firefox */
+body { -ms-overflow-style: none; } /* IE and Edge */
+body::-webkit-scrollbar, body::-webkit-scrollbar-button { display: none; } /* Chrome */
+/* end hide page scrollbar */
+
 /* === Basic Reset === */
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	scrollbar-gutter: stable both-edges;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scrollbar-gutter: stable both-edges;
 }
 
 /* === General Styles === */
 body {
-	font-family: "Inter", "Segoe UI", Roboto, sans-serif;
-	color: #222;
-	background-color: #fafafa;
-	line-height: 1.6;
+    font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    line-height: 1.6;
 }
 
 .container {
-	width: min(90%, 800px);
-	margin: auto;
+    width: min(90%, 800px);
+    margin: auto;
 }
 
 /* === Header === */
 header {
-	background: #fff;
-	border-bottom: 1px solid #e0e0e0;
-	padding: 2rem 0 1rem;
-	text-align: center;
+    background: var(--color-header-bg, #fff);
+    border-bottom: 1px solid var(--color-border);
+    padding: 2rem 0 1rem;
+    text-align: center;
 }
 
 header h1 {
-	font-size: 2rem;
-	font-weight: 600;
+    font-size: 2rem;
+    font-weight: 600;
 }
 
 header .tagline {
-	color: #555;
-	font-size: 1rem;
-	margin: 0.5rem 0 1rem;
+    color: var(--color-secondary-text);
+    font-size: 1rem;
+    margin: 0.5rem 0 1rem;
 }
 
 nav {
-	margin-top: 1rem;
+    margin-top: 1rem;
 }
 
 nav a {
-	color: #0066cc;
-	text-decoration: none;
-	margin: 0 0.75rem;
-	font-weight: 500;
-	transition: color 0.2s ease;
+    color: var(--color-link);
+    text-decoration: none;
+    margin: 0 0.75rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
 }
 
-nav a:hover {
-	color: #004999;
+/* .skip-link-color { */
+	/* transition: color 0.2s ease; */
+/* } */
+
+a:not(.skip-link-color) {
+    color: var(--color-link);
+    transition: color 0.2s ease;
+}
+
+a:not(.skip-link-color):hover {
+    color: var(--color-link-hover);
 }
 
 /* === Sections === */
-section {
-	margin-top: 3rem;
-}
-
 section h2 {
-	font-size: 1.5rem;
-	border-bottom: 2px solid #ddd;
-	padding-bottom: 0.3rem;
-	margin-bottom: 1rem;
-}
-
-.entry {
-	margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1rem;
 }
 
 .entry h3 {
-	font-size: 1.1rem;
-	color: #111;
+    font-size: 1.1rem;
+    color: var(--color-text);
 }
 
 .entry p, .entry ul {
-	margin-top: 0.25rem;
+    margin-top: 0.25rem;
 }
 
 .entry ul {
-	margin-left: 1.2rem;
-	list-style-type: disc;
+    margin-left: 1.2rem;
+    list-style-type: disc;
 }
 
 .subtext {
-	color: #555;
-	font-size: 0.95rem;
-}
-
-.skills-list li {
-	margin-bottom: 0.3rem;
+    color: var(--color-secondary-text);
+    font-size: 0.95rem;
 }
 
 /* === Footer === */
 footer {
-	text-align: center;
-	padding: 2rem 0;
-	color: #555;
-	font-size: 0.9rem;
+    text-align: center;
+    padding: 2rem 0;
+    color: var(--color-secondary-text);
+    font-size: 0.9rem;
 }
 
 footer a {
-	color: #0066cc;
-	text-decoration: none;
+    color: var(--color-link);
 }
 
 footer a:hover {
-	text-decoration: underline;
+    text-decoration: underline;
 }
 
 /* === Responsive === */
 @media (max-width: 600px) {
-	header h1 {
-	font-size: 1.6rem;
-	}
-	nav a {
-	display: block;
-	margin: 0.3rem 0;
-	}
-}
-
-.github-link-image > img {
-	display: inline;
-    width: 20px;
-    height: 20px;
-    filter: invert(31%) sepia(98%) saturate(7491%) hue-rotate(204deg) brightness(95%) contrast(101%);
-    transition: filter 0.2s;
-}
-
-.github-link-image > img:hover {
-   filter: invert(31%) sepia(98%) saturate(7491%) hue-rotate(204deg) brightness(70%) contrast(101%);
+    header h1 {
+        font-size: 1.6rem;
+    }
+    nav a {
+        display: block;
+        margin: 0.3rem 0;
+    }
 }
