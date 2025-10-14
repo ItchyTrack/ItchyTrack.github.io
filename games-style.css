@@ -1,0 +1,58 @@
+/* === Game Grid === */
+
+.game-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	gap: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+.game-card {
+	position: relative;
+	background: var(--bg-image) center/cover no-repeat;
+	border-radius: 8px;
+	box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+	/* transition: transform 0.25s ease, box-shadow 0.25s ease; */
+	min-height: 220px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+.game-content {
+	z-index: 1;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	border-radius: 8px;
+}
+
+.game-content-text-side {
+	margin: 0.5rem;
+}
+
+.game-content-image-side {
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 0;
+}
+
+.game-links {
+	display: flex;
+	flex-direction: row;
+	justify-content: left;
+	gap: 1rem;
+}
+
+.game-links a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.game-link:hover {
+	filter: brightness(60%)
+}
