@@ -20,10 +20,13 @@
 }
 
 .game-content {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	z-index: 1;
-	display: flex;
+	gap: 1.5rem;
+	/* display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: space-between; */
 	border-radius: 8px;
 }
 
@@ -38,6 +41,18 @@
 	flex-direction: column;
 	justify-content: center;
 	gap: 0;
+}
+
+.game-img-container {
+	display: flex;
+	justify-content: center;
+	max-width: 300px;
+	height: 200px;
+	clip-path: view-box;
+}
+
+.game-img-container > img {
+	width: 100%;
 }
 
 .game-links {
