@@ -134,6 +134,12 @@ footer a:hover {
    filter: invert(31%) sepia(98%) saturate(7491%) hue-rotate(204deg) brightness(70%) contrast(101%);
 }
 
+.content-box {
+    background: var(--container-color-background-grad);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(46, 46, 46, 0.4);
+}
+
 /* === Responsive === */
 @media (max-width: 600px) {
     header h1 {
