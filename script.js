@@ -54,15 +54,14 @@ async function initSlideshows() {
 	const slideshows = document.querySelectorAll(".slideshow");
 	if (!slideshows.length) return startTimer(); // nothing to do, but ensure timer logic consistent
 
-	// create slide objects serially or in parallel as you prefer
-	const promises = Array.from(slideshows).map(makeSlideObject);
-	await Promise.all(promises);
+	for (const slideshow of slideshows) {
+		await makeSlideObject(slideshow);
+	}
 
 	// If there are any slideshows registered, ensure at least one slide is active
 	window.slideshows.forEach(sinfo => {
 		const slides = sinfo.slides;
 		if (slides && slides.length) {
-			// mark the currentIndex slide active (defensive)
 			const idx = sinfo.currentIndex || 0;
 			slides.forEach((s, i) => {
 				if (i === idx) s.classList.add("active");
