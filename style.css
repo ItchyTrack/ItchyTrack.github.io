@@ -1,10 +1,11 @@
 /* === Color Scheme Variables === */
 :root {
-    --color-background: #372c2e;
-	--color-header-bg: var(--color-background);
-    --color-text: #ffffff;
-    --color-link: #1e7bd8;
-    --color-link-hover: #0056b2;
+    --color-background-grad: linear-gradient(to top left, #0b1118, #131C28);
+    --container-color-background-grad: linear-gradient(to top, #303438, #42484d);
+    --container-color-background: #4f4f51;
+    --color-text: #e1d9d5;
+    --color-link: #4691db;
+    --color-link-hover: #2873c3;
     --color-secondary-text: #c7b2b2;
     --color-border: #898989;
 }
@@ -27,7 +28,8 @@ body::-webkit-scrollbar, body::-webkit-scrollbar-button { display: none; } /* Ch
 body {
     font-family: "Inter", "Segoe UI", Roboto, sans-serif;
     color: var(--color-text);
-    background-color: var(--color-background);
+    /* background-color: var(--color-background); */
+	background-image: var(--color-background-grad);
     line-height: 1.6;
 }
 
@@ -38,7 +40,7 @@ body {
 
 /* === Header === */
 header {
-    background: var(--color-header-bg, #fff);
+    /* background: var(--color-header-bg, #fff); */
     border-bottom: 1px solid var(--color-border);
     padding: 2rem 0 1rem;
     text-align: center;
@@ -67,9 +69,6 @@ nav a {
     transition: color 0.2s ease;
 }
 
-/* .skip-link-color { */
-	/* transition: color 0.2s ease; */
-/* } */
 
 a:not(.skip-link-color) {
     color: var(--color-link);
@@ -121,6 +120,18 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
+}
+
+.github-link-image > img {
+	display: inline;
+    width: 20px;
+    height: 20px;
+    filter: invert(31%) sepia(98%) saturate(7491%) hue-rotate(204deg) brightness(95%) contrast(101%);
+    transition: filter 0.2s;
+}
+
+.github-link-image > img:hover {
+   filter: invert(31%) sepia(98%) saturate(7491%) hue-rotate(204deg) brightness(70%) contrast(101%);
 }
 
 /* === Responsive === */
