@@ -1,7 +1,7 @@
 async function loadPage(page) {
 	const content = document.getElementById("content");
 	try {
-		const res = await fetch(`pages/${page}.html`);
+		const res = await fetch(`pages/${page}.html?cacheBust=${Date.now()}`);
 		const html = await res.text();
 		content.innerHTML = html;
 		updateActiveLink(page);
