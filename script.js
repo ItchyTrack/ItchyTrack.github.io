@@ -11,6 +11,7 @@ async function loadPage(page) {
 		// clean previous slideshows + init new ones
 		cleanupSlideshows();
 		await initSlideshows();
+		initImageMousePan();
 	} catch (err) {
 		console.error("loadPage error:", err);
 		content.innerHTML = "<p>Sorry, this page could not be loaded.</p>";
@@ -217,3 +218,73 @@ function startTimer() {
 }
 
 function resetTimer() { startTimer(); }
+
+function initImageMousePan() {
+	const containers = document.querySelectorAll(".img-mouse-pan");
+
+	containers.forEach(container => {
+		const img = container.querySelector("img");
+		if (!img) return
+
+		function getDisplaySize() {
+			const rect = container.getBoundingClientRect();
+			const containerW = rect.width;
+			const containerH = rect.height;
+
+			const imgRatio = img.naturalWidth / img.naturalHeight;
+			const containerRatio = containerW / containerH;
+
+			let displayW, displayH;
+			if (imgRatio > containerRatio) {
+				displayH = containerH;
+				displayW = imgRatio * containerH;
+			} else {
+				displayW = containerW;
+				displayH = containerW / imgRatio;
+			}
+			displayW = displayW*1.1
+			displayH = displayH*1.1
+
+			return { displayW, displayH, containerW, containerH };
+		}
+
+		function centerImage() {
+			const { displayW, displayH, containerW, containerH } = getDisplaySize();
+			const centerX = -(displayW - containerW) / 2;
+			const centerY = -(displayH - containerH) / 2;
+			img.style.width = `${displayW}px`;
+			img.style.height = `${displayH}px`;
+			img.style.transform = `translate(${centerX}px, ${centerY}px)`;
+		}
+
+		function handleMove(e) {
+			const { displayW, displayH, containerW, containerH } = getDisplaySize();
+
+			const overflowX = displayW - containerW;
+			const overflowY = displayH - containerH;
+
+			const rect = container.getBoundingClientRect();
+			const x = (e.clientX - rect.left) / containerW;
+			const y = (e.clientY - rect.top) / containerH;
+
+
+			const translateX = -(overflowX / 2) + (0.5 - x) * overflowX;
+			const translateY = -(overflowY / 2) + (0.5 - y) * overflowY;
+
+			img.style.transform = `translate(${translateX}px, ${translateY}px)`;
+		}
+
+		img.addEventListener("load", centerImage);
+		window.addEventListener("resize", centerImage);
+		container.addEventListener("mouseenter", centerImage);
+		container.addEventListener("mousemove", handleMove);
+
+		container.addEventListener("mouseleave", () => {
+			img.style.transition = "transform 0.5s ease";
+			centerImage();
+			setTimeout(() => {
+				img.style.transition = "transform 0.1s ease-out";
+			}, 500);
+		});
+	});
+}

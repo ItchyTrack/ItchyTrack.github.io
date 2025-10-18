@@ -3,6 +3,9 @@
 		<a class="github-link-image" href="https://github.com/Martian-Technologies/Connection-Machine">
 			<img src="images/github.svg">
 		</a>
+		<a class="link-image" href="https://connection-machine.com/">
+			<img src="images/gateIcon.png">
+		</a>
 	</h2>
 
 	<!-- <div class="project-image">
@@ -11,36 +14,41 @@
 
 	<article class="project-page-content">
 		<section class="entry content-box">
-			<h2>What is Connection Machine?</h2>
+			<h2>About Connection Machine</h2>
 			<p>
-				Connection Machine is an open-source and cross-platform desktop application for designing and simulating digital circuits at scale.
-				It's built as a university project for RCOS. You can get a build of the application from the releases page on GitHub, or build it yourself.
+				Connection Machine is an open-source project I started at the end of my first semester in college. It is a cross-platform desktop application for designing and simulating digital circuits.
+			</p><p>
+				In my second semester I lead a team in RCOS (Rensselaer Center for Open Source Software) of 10 students to help develop the app. I again lead a team through RCOS in my third semester and plan to do so in following semester.
 			</p>
 		</section>
 
 		<div class="split-entry">
 			<section class="entry content-box">
-				<h2>Features</h2>
-				<ul>
-					<li><strong>Tensor connect:</strong> Perform enormous connections by projecting your circuit across space.</li>
-					<li><strong>Fast simulation:</strong> Custom-built engine can simulate entire computers in real-time.</li>
-					<li><strong>Open-source:</strong> Free to use and contribute to on GitHub.</li>
-					<li><strong>Custom components:</strong> Create and reuse your own components.</li>
-				</ul>
+				<h2>What does it do</h2>
+				<p>
+					Connection Machine is ment to be a high performant and more intuitive alternative to existing logic simulators. The app is written in C++ and is accelerated with Vulkan which also it to create very large circuits and simulate them at very high speeds.
+				</p>
 			</section>
-			<section class="entry content-box"></section>
+			<section class="img-entry">
+				<div class="img-mouse-pan">
+					<img src="images/CM_mandel.png">
+				</div>
+			</section>
 		</div>
 
 		<section class="entry content-box">
-			<h2>Planned Features</h2>
-			<ul>
-				<li><strong>GPU acceleration:</strong> Perform simulations at blazing speeds.</li>
-				<li><strong>Real-world interaction:</strong> Connect designs to real devices for sound or game input.</li>
-				<li><strong>Online circuit catalog:</strong> Share and download designs with the community.</li>
-			</ul>
+			<h2>Cool Features</h2>
+			<p>
+				<b>WASM intergration:</b> Users can open WASM files that describe how to create blocks and then create dynamic blocks based off parameters set by the user.
+			</p>
+			<p>
+				<b>Tensor Connect:</b> This is a tool that allows users to define arbitrary complex connections by repeatedly projecting connections across space.
+			</p>
+			<p>
+				<b>Vulkan Acceleration:</b> We use Vulkan to do rendering which allows us to have 1,000,000+ objects on the screen. We also plan to move circuit simulation to the GPU.
+			</p>
 		</section>
 	</article>
-
 	<footer class="project-footer">
 		<p>See on <a href="https://github.com/Martian-Technologies/Connection-Machine">GitHub</a>.</p>
 	</footer>
