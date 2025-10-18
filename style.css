@@ -57,19 +57,6 @@ header .tagline {
     margin: 0.5rem 0 1rem;
 }
 
-nav {
-    margin-top: 1rem;
-}
-
-nav a {
-    color: var(--color-link);
-    text-decoration: none;
-    margin: 0 0.75rem;
-    font-weight: 500;
-    transition: color 0.2s ease;
-}
-
-
 a:not(.skip-link-color) {
     color: var(--color-link);
     transition: color 0.2s ease;
@@ -79,12 +66,37 @@ a:not(.skip-link-color):hover {
     color: var(--color-link-hover);
 }
 
+nav {
+    margin-top: 1rem;
+}
+
+nav a {
+    color: #fdfdfd;
+    text-decoration: none;
+    margin: 0 0.75rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+nav .active {
+	text-decoration: underline;
+}
+
+nav a:not(.active):hover {
+    color: var(--color-link-hover);
+}
+
 /* === Sections === */
 section h2 {
     font-size: 1.5rem;
     border-bottom: 2px solid #ddd;
     padding-bottom: 0.3rem;
     margin-bottom: 1rem;
+	margin-top: 8px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	/* justify-content: center; */
 }
 
 .entry h3 {
@@ -123,10 +135,14 @@ footer a:hover {
 }
 
 .github-link-image {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 	text-decoration: none;
 }
 
 .github-link-image > img {
+	margin-left: 8px;
 	display: inline;
     width: 20px;
     height: 20px;
@@ -136,10 +152,14 @@ footer a:hover {
 }
 
 .github-link-image > img:hover {
-   filter: invert(31%) sepia(98%) saturate(7491%) hue-rotate(204deg) brightness(70%) contrast(101%);
+   filter: invert(31%) sepia(98%) saturate(7491%) hue-rotate(204deg) brightness(80%) contrast(101%);
 }
 
 .link-image {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-left: 8px;
 	text-decoration: none;
 }
 
@@ -152,7 +172,7 @@ footer a:hover {
 }
 
 .link-image > img:hover {
-	filter: brightness(0.6);
+	filter: brightness(0.7);
 }
 
 .content-box {

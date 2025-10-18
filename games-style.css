@@ -9,11 +9,6 @@
 
 .game-card {
 	position: relative;
-	/* background: var(--container-color-background); */
-	/* background-image: var(--container-color-background-grad); */
-	/* border-radius: 8px; */
-	/* box-shadow: 0 0 8px rgba(60, 60, 60, 0.4); */
-	/* transition: transform 0.25s ease, box-shadow 0.25s ease; */
 	min-height: 220px;
 	display: flex;
 	flex-direction: column;
@@ -21,16 +16,15 @@
 }
 
 .game-content {
-	/* display: grid; */
-	/* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
 	z-index: 1;
 	gap: 1.5rem;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	flex-wrap: wrap;
-	margin: 0.2rem;
-	margin-left: 0.5rem;
+	/* margin: 0.2rem; */
+	margin-left: 14px;
+	margin-right: 1px;
 	border-radius: 8px;
 }
 
@@ -47,7 +41,9 @@
 }
 
 .game-content-image-side {
-	margin: 0.5rem;
+	margin-top: 0.5rem;
+	/* margin-bottom: 0.5rem; */
+	margin-right: 0.5rem;
 	display: flex;
 	flex: 1;
 	max-width: 300px;
@@ -59,10 +55,10 @@
 }
 
 .game-img-container {
+	height: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	/* clip-path: view-box; */
 }
 
 .game-img-container>img {
@@ -70,6 +66,7 @@
 }
 
 .game-links {
+	height: 2.4rem;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -80,10 +77,6 @@
 	display: flex;
 	align-items: center;
 	text-decoration: none;
-}
-
-.game-link:hover {
-	filter: brightness(60%)
 }
 
 /* === Slideshow Styles === */
