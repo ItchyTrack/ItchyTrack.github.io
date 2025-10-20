@@ -1,7 +1,7 @@
 /* === Color Scheme Variables === */
 :root {
     --color-background-grad: linear-gradient(to top left, #0b1118, #131C28);
-    --container-color-background-grad: linear-gradient(to top, #303438, #42484d);
+    --container-color-background-grad: linear-gradient(to top, #25272a, #34393c);
     --container-color-background: #4f4f51;
     --color-text: #e1d9d5;
     --color-link: #4691db;
