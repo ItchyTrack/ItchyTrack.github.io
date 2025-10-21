@@ -146,13 +146,13 @@ footer a:hover {
 	display: inline;
     width: 20px;
     height: 20px;
-    filter: invert(31%) sepia(98%) saturate(7491%) hue-rotate(204deg) brightness(95%) contrast(101%);
+    filter: brightness(1000%) invert(100%);
     transition: filter 0.2s;
 	text-decoration: none;
 }
 
 .github-link-image > img:hover {
-   filter: invert(31%) sepia(98%) saturate(7491%) hue-rotate(204deg) brightness(80%) contrast(101%);
+	filter: brightness(1000%) invert(75%);
 }
 
 .link-image {
