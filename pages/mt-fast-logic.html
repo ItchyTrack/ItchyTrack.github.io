@@ -11,23 +11,23 @@
 		<section class="entry content-box">
 			<h2>About MT Fast Logic</h2>
 			<p>
-				Fast logic is a mod created to improve the logic gates and tools in the game Scrap Mechanic. It adds a block replacement for the default logic gates that improves speed and adds a multitool that can be used to greatly increase the amount of logic someone can build.
+				Fast logic is a mod created to improve the logic-blocks execution system and tools in the game Scrap Mechanic. User creations are scanned to build an abstract representation of user logic, which is then transformed to apply simple optimizations. The resulting logic dataflow graph is executed independently from the game ticks, allowing much faster logic execution than the original game supports. The mod also enables coloring of logic-block outputs and edges and provides a multitool that allows users to more easily create and interconnect large-scale logic arrays.
 			</p>
 			<p>
-				This project was made in collaboration with one other person. I worked on the logic gates and simulations. He worked on the multitool. We worked together to allow them to cleanly interact as one system. The mod has been downloaded 2,356 times.
+				This project was made in collaboration with one other person. I developed the logic gates, graph optimizations, and simulator. He worked on the multitool. We worked together to allow them to cleanly interact as one system. The mod has been downloaded over 2,300 times.
 			</p>
 		</section>
 
 		<div class="split-entry">
 			<section class="entry content-box">
-				<h2>What we I on</h2>
+				<h2>The Big Idea</h2>
 				<p>
-					This project focuses on high performance and so great care was taken to run the logic as fast as possible. I employed many optimization techniques such as disable inactive gates. converting gates more optimal simulated version, statistic based input ordering, combining gates together.
+					This project focuses on high performance within a highly constrained execution environment, so great care was taken to run the logic as fast as possible while fitting into Scrap Mechanic’s game system. I employed many optimization techniques such as disabling inactive gates (minimal recompute), converting gates to more optimal simulated versions (instruction selection), statistically based input ordering (instruction reordering for early exit), and combining gates together (instruction merging).
 				</p>
 			</section>
 			<section class="img-entry">
 				<div class="img-mouse-pan">
-					<img src="images/CM_mandel.png">
+					<img src="images/vertex_coloring_FL.png">
 				</div>
 			</section>
 		</div>
