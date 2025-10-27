@@ -89,3 +89,25 @@
     color: var(--color-link-hover);
     text-decoration: underline;
 }
+
+@media (max-width: 500px) {
+	.project-page-content .split-entry {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.project-page-content .split-entry .img-entry {
+		flex: none;
+		width: 100%;
+		max-width: 600px;
+		position: relative;
+		height: auto;
+	}
+
+	.project-page-content .split-entry .img-entry img {
+		position: relative; /* stop absolute positioning on small screens */
+		width: 100%;
+		height: auto;
+		display: block;
+	}
+}

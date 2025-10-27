@@ -130,3 +130,34 @@
 	bottom: 50%;
 	transform: translateX(-50%);
 }
+
+@media (max-width: 500px) {
+	.default-page-content .split-entry {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.default-page-content .split-entry .entry,
+	.default-page-content .split-entry .img-entry,
+	.default-page-content .split-entry .img-entry-smaller {
+		flex: none;
+		width: 100%;
+	}
+
+	.default-page-content .split-entry .img-entry img,
+	.default-page-content .split-entry .img-entry-smaller img {
+		position: static;
+		width: 100%;
+		height: auto;
+		transform: none;
+	}
+
+	.default-page-content h3 {
+		font-size: 1.1rem;
+		text-align: center;
+	}
+
+	.default-page-content .content-box {
+		padding: 0.75rem;
+	}
+}

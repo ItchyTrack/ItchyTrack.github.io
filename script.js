@@ -249,6 +249,7 @@ function initImageMousePan() {
 		}
 
 		function centerImage() {
+			if (window.innerWidth < 500) return;
 			const { displayW, displayH, containerW, containerH } = getDisplaySize();
 			const centerX = -(displayW - containerW) / 2;
 			const centerY = -(displayH - containerH) / 2;
@@ -258,6 +259,8 @@ function initImageMousePan() {
 		}
 
 		function handleMove(e) {
+			if (window.innerWidth < 500) return;
+
 			const { displayW, displayH, containerW, containerH } = getDisplaySize();
 
 			const overflowX = displayW - containerW;
