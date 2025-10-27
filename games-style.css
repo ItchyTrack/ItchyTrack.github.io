@@ -229,9 +229,19 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: rgba(0, 0, 0, 0.732);
+	background: rgba(0, 0, 0, 0.603);
 	z-index: 9999;
 	transition: opacity 0.3s ease;
+}
+
+.lightbox #lightbox-buttons {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	max-width: 190vh;
 }
 
 .lightbox.hidden {
@@ -239,12 +249,11 @@
 }
 
 .lightbox img {
-	clip-path: stroke-box;
-	width: 80vw;
-	height: 80vh;
+	max-width: 80vw;
+	max-height: 80vh;
 	object-fit: contain;
 	border-radius: 12px;
-	box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+	box-shadow: 0 0 10px rgba(211, 211, 211, 0.5);
 }
 
 .lightbox button {
