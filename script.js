@@ -10,7 +10,7 @@ async function loadPage(page) {
 
 		// clean previous slideshows + init new ones
 		cleanupSlideshows();
-		await initSlideshows();
+		await initSlideshows().then(initLightbox);;
 		initImageMousePan();
 	} catch (err) {
 		console.error("loadPage error:", err);
@@ -242,8 +242,8 @@ function initImageMousePan() {
 				displayW = containerW;
 				displayH = containerW / imgRatio;
 			}
-			displayW = displayW*1.1
-			displayH = displayH*1.1
+			displayW = displayW * 1.1
+			displayH = displayH * 1.1
 
 			return { displayW, displayH, containerW, containerH };
 		}
@@ -286,5 +286,77 @@ function initImageMousePan() {
 				img.style.transition = "transform 0.1s ease-out";
 			}, 500);
 		});
+	});
+}
+
+// --- LIGHTBOX LOGIC ---
+function initLightbox() {
+	const lightbox = document.getElementById("lightbox");
+	const lightboxImg = lightbox.querySelector(".lightbox-image");
+	const closeBtn = lightbox.querySelector(".close");
+	const prevBtn = lightbox.querySelector(".prev");
+	const nextBtn = lightbox.querySelector(".next");
+
+	let currentSlides = [];
+	let currentIndex = 0;
+
+	// Attach click handlers to all slideshow slides
+	document.querySelectorAll(".slideshow .slide img, .slideshow .slide").forEach(img => {
+		img.style.cursor = "zoom-in";
+		img.addEventListener("click", (e) => {
+			// find the slideshow that this image belongs to
+			const slideshow = e.target.closest(".slideshow");
+			if (!slideshow) return;
+
+			// collect slides in this slideshow
+			currentSlides = Array.from(slideshow.querySelectorAll(".slide img, .slide"));
+			currentIndex = currentSlides.indexOf(e.target);
+			if (currentIndex < 0) currentIndex = 0;
+
+			openLightbox();
+		});
+	});
+
+	function openLightbox() {
+		if (!currentSlides.length) return;
+		lightboxImg.src = currentSlides[currentIndex].src;
+		lightbox.classList.remove("hidden");
+	}
+
+	function closeLightbox() {
+		lightbox.classList.add("hidden");
+	}
+
+	function showNext() {
+		if (!currentSlides.length) return;
+		currentIndex = (currentIndex + 1) % currentSlides.length;
+		openLightbox();
+	}
+
+	function showPrev() {
+		if (!currentSlides.length) return;
+		currentIndex = (currentIndex - 1 + currentSlides.length) % currentSlides.length;
+		openLightbox();
+	}
+	closeBtn.addEventListener("click", closeLightbox);
+	nextBtn.addEventListener("click", showNext);
+	prevBtn.addEventListener("click", showPrev);
+
+	// close on click outside image or Escape key
+	lightbox.addEventListener("click", (e) => {
+		if (
+			e.target !== lightboxImg &&
+			!e.target.classList.contains("prev") &&
+			!e.target.classList.contains("next") &&
+			!e.target.classList.contains("close")
+		) {
+			closeLightbox();
+		}
+	});
+	document.addEventListener("keydown", (e) => {
+		if (lightbox.classList.contains("hidden")) return;
+		if (e.key === "Escape") closeLightbox();
+		if (e.key === "ArrowRight") showNext();
+		if (e.key === "ArrowLeft") showPrev();
 	});
 }

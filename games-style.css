@@ -34,10 +34,10 @@
 }
 
 .game-content-text-side h2 {
-    font-size: 1.3rem;
-    border-bottom: 1px solid var(--color-border);
-    padding-bottom: 0.3rem;
-    margin-bottom: 0.8rem;
+	font-size: 1.3rem;
+	border-bottom: 1px solid var(--color-border);
+	padding-bottom: 0.3rem;
+	margin-bottom: 0.8rem;
 }
 
 .game-content-image-side {
@@ -108,11 +108,18 @@
 }
 
 @keyframes float-pop {
-  0% { transform: scale(1) translateY(0); }
-  50% { transform: scale(1.02) translateY(-2px); }
-  100% { transform: scale(1) translateY(0); }
-}
+	0% {
+		transform: scale(1) translateY(0);
+	}
 
+	50% {
+		transform: scale(1.02) translateY(-2px);
+	}
+
+	100% {
+		transform: scale(1) translateY(0);
+	}
+}
 
 .slideshow img.active {
 	opacity: 1;
@@ -156,6 +163,7 @@
 		transform: translateX(100%) scale(0.6);
 		opacity: 0;
 	}
+
 	to {
 		transform: translateX(0%) scale(1);
 		opacity: 1;
@@ -167,6 +175,7 @@
 		transform: translateX(0%) scale(1);
 		opacity: 1;
 	}
+
 	to {
 		transform: translateX(-100%) scale(0.6);
 		opacity: 0;
@@ -178,6 +187,7 @@
 		transform: translateX(-100%) scale(0.6);
 		opacity: 0;
 	}
+
 	to {
 		transform: translateX(0%) scale(1);
 		opacity: 1;
@@ -189,6 +199,7 @@
 		transform: translateX(0%) scale(1);
 		opacity: 1;
 	}
+
 	to {
 		transform: translateX(100%) scale(0.6);
 		opacity: 0;
@@ -210,4 +221,51 @@
 
 .slide-exit-prev {
 	animation: slide-exit-prev 0.5s forwards;
+}
+
+.lightbox {
+	position: fixed;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(0, 0, 0, 0.732);
+	z-index: 9999;
+	transition: opacity 0.3s ease;
+}
+
+.lightbox.hidden {
+	display: none;
+}
+
+.lightbox img {
+	clip-path: stroke-box;
+	width: 80vw;
+	height: 80vh;
+	object-fit: contain;
+	border-radius: 12px;
+	box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.lightbox button {
+	background: none;
+	border: none;
+	color: white;
+	font-size: 2rem;
+	cursor: pointer;
+	position: absolute;
+	user-select: none;
+}
+
+.lightbox .close {
+	top: 20px;
+	right: 30px;
+}
+
+.lightbox .prev {
+	left: 30px;
+}
+
+.lightbox .next {
+	right: 30px;
 }
