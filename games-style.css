@@ -9,7 +9,7 @@
 
 .game-card {
 	position: relative;
-	min-height: 220px;
+	min-height: 180px;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
