@@ -15,17 +15,17 @@
 		<section class="entry content-box">
 			<h2>About Connection Machine</h2>
 			<p>
-				Connection Machine is an open-source project I started at the end of my first semester in college. It is a cross-platform desktop application for designing and simulating very large digital circuits.
+				Connection Machine is an open-source, cross-platform desktop application I created for designing and simulating very large digital circuits. It provides an intuitive visual interface and a powerful simulation engine that lets users build and experiment with complex designs in real time.
 			<br><br>
-				I lead an <span class="tooltip">RCOS<span class="tooltiptext"><a class="skip-link-color" href="https://new.rcos.io">Rensselaer Center for Open Source Software</a></span><span class="hitbox-larger"></span></span> project to continue development of the app. Since spring of last year we have had 14 RPI developers and one out of country contributor.
+				I conceived and launched the project independently at the end of my first semester at RPI, and it became an official <span class="tooltip">RCOS<span class="tooltiptext"><a class="skip-link-color" href="https://new.rcos.io">Rensselaer Center for Open Source Software</a></span><span class="hitbox-larger"></span></span> project the following semester. Since then, I’ve led a team of 15 developers — 14 from RPI and one international contributor — to expand and refine the platform’s capabilities.
 			</p>
 		</section>
 
 		<div class="split-entry">
 			<section class="entry content-box">
-				<h2>What does it do</h2>
+				<h2>What It Does</h2>
 				<p>
-					Connection Machine is meant to be a more performant and intuitive alternative to existing logic simulators. The app is written in C++ and is accelerated with Vulkan, which allows creating very large circuits and simulating them at very high speeds.
+					Connection Machine is designed as a faster, more intuitive alternative to existing logic simulators. Written in C++ and accelerated with Vulkan, it supports the creation and simulation of very large circuits at exceptionally high speeds.
 				</p>
 			</section>
 			<section class="img-entry">
@@ -37,15 +37,17 @@
 
 		<section class="entry content-box">
 			<h2>Cool Features</h2>
-			<p>
-				<b>WASM Integration:</b> Users can open WASM files that describe how to create blocks, and then create dynamic blocks based off parameters set by the user.
-			</p>
-			<p>
-				<b>Tensor Connect:</b> This is a tool that allows users to define arbitrarily complex connections by repeatedly projecting connections across space.
-			</p>
-			<p>
-				<b>Vulkan Acceleration:</b> We use Vulkanm to do rendering which allows us to have 1,000,000+ blocks and wires on the screen. We also plan to move circuit simulation to the GPU.
-			</p>
+			<ul>
+				<li>
+					<b>WASM Integration:</b> Users can import WebAssembly (WASM) files that define how to generate circuit blocks, enabling dynamic block creation based on user-defined parameters.
+				</li>
+				<li>
+					<b>Tensor Connect:</b> A powerful tool for defining arbitrarily complex wiring patterns by repeatedly projecting connections across space.
+				</li>
+				<li>
+					<b>Vulkan Acceleration:</b> The engine uses Vulkan for rendering, allowing over one million objects on screen simultaneously. Circuit simulation is also being migrated to the GPU for even greater performance.
+				</li>
+			</ul>
 		</section>
 	</article>
 </section>
