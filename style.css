@@ -10,11 +10,12 @@
     --color-border: #898989;
 }
 
-/* hide page scrollbar */
-html { scrollbar-width: none; } /* Firefox */
-body { -ms-overflow-style: none; } /* IE and Edge */
-body::-webkit-scrollbar, body::-webkit-scrollbar-button { display: none; } /* Chrome */
-/* end hide page scrollbar */
+html {
+	scrollbar-width: none;
+	background-color: #131C28;
+	background-image: var(--color-background-grad);
+}
+body::-webkit-scrollbar, body::-webkit-scrollbar-button { display: none; }
 
 /* === Basic Reset === */
 * {
@@ -28,9 +29,8 @@ body::-webkit-scrollbar, body::-webkit-scrollbar-button { display: none; } /* Ch
 body {
     font-family: "Inter", "Segoe UI", Roboto, sans-serif;
     color: var(--color-text);
-    /* background-color: var(--color-background); */
-	background-image: var(--color-background-grad);
     line-height: 1.6;
+	-ms-overflow-style: none;
 }
 
 .container {
