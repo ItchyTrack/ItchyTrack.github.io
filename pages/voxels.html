@@ -1,0 +1,24 @@
+<section id="voxels">
+	<h2>Voxel Game Engine
+		<a target="_blank" rel="noopener noreferrer" class="github-link-image" href="https://github.com/ItchyTrack/Voxel-Game-Engine">
+			<img src="images/github.svg">
+		</a>
+	</h2>
+
+	<canvas id="canvas", style="width: 800px; height: 600px;"></canvas>
+	<script type="module">
+		console.log("Running JS");
+		import init from "./voxel_game_engine.js";
+		init().then(() => {
+			console.log("WASM Loaded");
+		});
+	</script>
+	<article>
+		Move: WASD<br>
+		Camera: Arrows keys/Mouse<br>
+		Push: R<br>
+		Pick up: F<br>
+		Place: Space/C<br>
+		Destroy: X/Z
+	</article>
+</section>

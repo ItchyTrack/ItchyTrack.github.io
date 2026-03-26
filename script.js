@@ -6,6 +6,7 @@ async function loadPage(page) {
 		if (!res.ok) throw new Error(`HTTP ${res.status}`);
 		const html = await res.text();
 		content.innerHTML = html;
+		rehydrateScripts(content)
 		updateActiveLink(page);
 
 		// clean previous slideshows + init new ones
@@ -16,6 +17,19 @@ async function loadPage(page) {
 		console.error("loadPage error:", err);
 		content.innerHTML = "<p>Sorry, this page could not be loaded.</p>";
 	}
+}
+
+function rehydrateScripts(container) {
+    container.querySelectorAll("script").forEach(oldScript => {
+        const newScript = document.createElement("script");
+        if (oldScript.type) newScript.type = oldScript.type;
+        if (oldScript.src) {
+            newScript.src = oldScript.src;
+        } else {
+            newScript.textContent = oldScript.textContent;
+        }
+        oldScript.replaceWith(newScript);
+    });
 }
 
 function updateActiveLink(page) {
